@@ -103,6 +103,6 @@ type Issue = {
 
 ## Demo URL
 
-[Demo URL not provided in the given information]
+https://frontend-firebase.vercel.app/
 
 Note: To run this project, you'll need to set up your own Firebase project and add the necessary environment variables for Firebase configuration.
