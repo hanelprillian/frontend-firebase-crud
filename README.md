@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Firebase CRUD
 
-## Getting Started
+This project is a Next.js application that demonstrates CRUD (Create, Read, Update, Delete) operations using Firebase as the backend.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Folder Structure
+
+```
+frontend-firebase-crud/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── (api)/
+│   │   │   └── api/
+│   │   │       └── issues/
+│   │   ├── (components)/
+│   │   ├── (issues)/
+│   │   │   ├── (components)/
+│   │   │   └── (hooks)/
+│   │   └── layout.tsx
+│   └── lib/
+│       └── services/
+├── .gitignore
+├── next.config.mjs
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend
+- Next.js
+- Firebase
+- Tailwind CSS
+- TypeScript
+- Framer Motion
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Backend
+- Firebase (Firestore for database, Storage for file uploads)
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Create, Read, Update, and Delete issues
+- Image upload for issues
+- Filtering and sorting of issues
+- Server-side rendering with Next.js
+- API routes for backend operations
+- Framer Motion for animations
+- Responsive design
+- Framer Motion for animations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## How to Run
+1. Clone the repository
+2. Install the dependencies
+   ```
+   npm install
+   ```
+3. Run the development server
+   ```
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## API Documentation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### GET /api/issues
+
+- Response: Array of Issue objects
+
+### POST /api/issues
+
+- Request body: Issue object (without id)
+- Response: Issue object (with id)
+
+
+### GET /api/issues/[id]
+- Retrieves a specific issue by ID
+- Response: Issue object
+
+
+### PUT /api/issues/[id]
+
+- Request body: Partial<Issue>
+- Response: { message: string }
+
+
+## Issue Object Structure
+
+```typescript
+type Issue = {
+  id: string;
+  imageUri: string;
+  title: string;
+  issueNumber: string;
+  issueDate: string;
+};
+```
+
+## Demo URL
+
+[Demo URL not provided in the given information]
+
+Note: To run this project, you'll need to set up your own Firebase project and add the necessary environment variables for Firebase configuration.
